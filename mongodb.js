@@ -5,6 +5,7 @@ const MongoClient = mongodb.MongoClient
 connectionURL = 'mongodb://127.0.0.1:27017'
 dbName = "task-manager"
 
+console.log("mongodb")
 MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
     if (error) return console.log('unable to connect to DataBase')
 
