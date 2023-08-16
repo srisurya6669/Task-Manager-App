@@ -11,12 +11,12 @@ const auth = async (req, res, next) => {
         if (!user) {
             throw new Error()
         }
-
+        req.token = token
         req.user = user
         next()
     }
     catch (e) {
-        console.log(e)
+        res.status(401).send({ error: 'please authenticate' })
     }
 }
 module.exports = auth
