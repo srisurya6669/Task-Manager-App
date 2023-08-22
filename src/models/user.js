@@ -3,6 +3,7 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Task = require('./task')
+const { buffer } = require('stream/consumers')
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -45,7 +46,10 @@ const userSchema = new mongoose.Schema({
             type: String,
             required: true,
         }
-    }]
+    }],
+    avatar: {
+        type: buffer
+    }
 }, {
     timestamps: true
 })
